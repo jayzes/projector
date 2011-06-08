@@ -34,7 +34,7 @@ module Projector
     
     desc "update", "Go through the Github repositories you can access and ensure that working copies for them are cloned into your working directory"
     long_desc <<-DESC
-      Projector loop through all of the repositories that you can access and clone working
+      Projector loops through all of the repositories that you can access and clones working
       copies of them under your configured working directory if they don't already exist
     DESC
     method_option :yes, :type => :boolean, :aliases => "-y"
