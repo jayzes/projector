@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# -*- mode: ruby -*-
+
+# Requires
+begin
+  require 'projector'
+rescue LoadError
+  $:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
+  require 'rubygems'
+  require 'projector'
+end
+
+# Setup Constants
+Projector::GEM_ROOT = File.expand_path( File.dirname( __FILE__ ) + '/../' )
+
+# Run
+Projector::CLI.start
