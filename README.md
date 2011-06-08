@@ -17,9 +17,8 @@ Requires the [Thor](https://github.com/wycats/thor) and JSON gems.  You'll also 
     git config --global github.user <username>
     git config --global github.token <token>
 
-3.  Configure your working directory
+3.  Configure your working directory.  I have a Projects directory under my home directory where I keep all of my working copies.  Adjust to fit your own conventions.
 
-    # For me, I have a Projects directory under my home directory where I keep all of my working copies.  Adjust to fit your own conventions.
     git config --global projector.workingdir ~/Projects
     
 4.  Run projector update
