@@ -17,11 +17,11 @@ Configure your Github settings (if you haven't done so already).  Details are [h
     git config --global github.user <username>
     git config --global github.token <token>
 
-Configure your working directory.  I have a Projects directory under my home directory where I keep all of my working copies.  Adjust to fit your own conventions.
+Configure your working directory.  I have a `Projects` directory under my home directory where I keep all of my working copies.  Adjust to your own convention as needed.
 
     git config --global projector.workingdir ~/Projects
 
-Run projector update.  Projector will find all of the repos you have access to and prompt you to clone them under your working directory if they're not already cloned.  By default, it will create a nested directory structure based on the repository owner, something like this:
+Run `projector update`.  Projector will find all of the repos you have access to and prompt you to clone them under your working directory if they're not already cloned.  By default, it will create a nested directory structure based on the repository owner, something like this:
 
     jayzes/
     jayzes/projector
