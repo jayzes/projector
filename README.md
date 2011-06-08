@@ -1,10 +1,10 @@
 # Projector
 
-A simple command-line app to keep your projects directory up to date with all of your Github projects.  I got tired of having to re-clone new projects all the time, and figured there had to be an easier way...so here it is.
+A simple command-line app to keep your projects directory up to date with all of your Github projects.  I got tired of having to re-clone new projects all the time, and figured there had to be an easier way.  Turns out there wasn't, so I built one.
 
 ## Dependencies
 
-Requires the [Thor](https://github.com/wycats/thor) and JSON gems.  See the gemspec for more info.
+Requires the [Thor](https://github.com/wycats/thor) and JSON gems.  You'll also need a Github account and API key.
 
 ## Installation and Usage
 
@@ -13,7 +13,7 @@ Requires the [Thor](https://github.com/wycats/thor) and JSON gems.  See the gems
     gem install projector
     
 2.  Configure your Github settings (if you haven't done so already).  Details are [here](http://help.github.com/set-your-user-name-email-and-github-token/), but the short version is:
-    
+
     git config --global github.user <username>
     git config --global github.token <token>
 
@@ -25,7 +25,7 @@ Requires the [Thor](https://github.com/wycats/thor) and JSON gems.  See the gems
 4.  Run projector update
     
   Projector will find all of the repos you have access to and prompt you to clone them under your working directory if they're not already cloned.  By default, it will create a nested directory structure based on the repository owner, something like this:
-  
+
     jayzes/
     jayzes/projector
     jayzes/cucumber-api-steps
