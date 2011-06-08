@@ -1,4 +1,4 @@
-# Cucumber API Steps
+# Projector
 
 A simple command-line app to keep your projects directory up to date with all of your Github projects.  I got tired of having to re-clone new projects all the time, and figured there had to be an easier way...so here it is.
 
