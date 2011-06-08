@@ -10,18 +10,18 @@ Requires the [Thor](https://github.com/wycats/thor) and JSON gems.  You'll also 
 
 1.  Install the gem
 
-    gem install projector
+    `gem install projector`
 
 
 2.  Configure your Github settings (if you haven't done so already).  Details are [here](http://help.github.com/set-your-user-name-email-and-github-token/), but the short version is:
 
-    git config --global github.user <username>
-    git config --global github.token <token>
+    `git config --global github.user <username>`
+    `git config --global github.token <token>`
 
 
 3.  Configure your working directory.  I have a Projects directory under my home directory where I keep all of my working copies.  Adjust to fit your own conventions.
 
-    git config --global projector.workingdir ~/Projects
+    `git config --global projector.workingdir ~/Projects`
 
 
 4.  Run projector update
