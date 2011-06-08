@@ -40,13 +40,11 @@ module Projector
     method_option :yes, :type => :boolean, :aliases => "-y"
     def update
       invoke :check
-      
       repos = all_repos
-      
       say "Checking #{repos.size} repositories"
       repos.each do |repo|
         say "Looking at #{repo.path}"
-        if !repo_cloned?(repo) && (options[:yes] || yes?("Repo #{repo.path} is not cloned yet.  Clone it? (y/n)"))
+        if should_clone_repo?(options[:yes])
           say "Cloning #{repo.clone_url} to #{repo.clone_path(projector_working_dir)}"
           repo.clone(projector_working_dir) 
         end

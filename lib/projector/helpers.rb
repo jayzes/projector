@@ -32,6 +32,10 @@ module Projector
       File.directory?(File.join(repo.clone_path(projector_working_dir), '.git'))
     end
     
+    def should_clone_repo(assume_yes)
+      !repo_cloned?(repo) && (assume_yes || yes?("Repo #{repo.path} is not cloned yet.  Clone it? (y/n)"))
+    end
+    
     def user_repos
       repo_api_request("https://github.com/api/v2/json/repos/show/#{github_username}")
     end
