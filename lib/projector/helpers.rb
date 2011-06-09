@@ -32,6 +32,15 @@ module Projector
       File.directory?(File.join(repo.clone_path(projector_working_dir), '.git'))
     end
     
+    def repo_out_of_date?(repo)
+      repo.fetch_refs(projector_working_dir)
+      repo.local_head(projector_working_dir) != repo.remote_head(projector_working_dir)
+    end
+    
+    def update_repo(repo)
+      repo.update(projector_working_dir)
+    end
+    
     def should_clone_repo?(repo, assume_yes = false)
       !repo_cloned?(repo) && (assume_yes || yes?("Repo #{repo.path} is not cloned yet.  Clone it? (y/n)"))
     end

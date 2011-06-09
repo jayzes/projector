@@ -51,6 +51,29 @@ module Projector
       end 
     end
     
+    desc "update", "Go through the Github repositories you have in your working copy and see which ones need updating from origin"
+    long_desc <<-DESC
+      Projector loops through all of the repositories that you can access and updates the working
+      copies of them under your configured working directory if they are outdated
+    DESC
+    method_option :assume, :type => :boolean, :aliases => "-a"
+    def update
+      invoke :check
+      repos = all_repos
+      say "Checking #{repos.size} repositories"
+      repos.each do |repo|
+        unless repo_cloned?(repo)
+          say "Skipping #{repo.path} since it is not cloned"
+          next
+        end
+        say "Looking at #{repo.path}"
+        update_repo(repo) if repo_out_of_date?(repo) && (yes?("Repo #{repo.path} has remote changes.  Update it? (y/n)") || options[:assume])
+      end 
+    end
+    
+    
+    
+    
 
     desc "version", "Prints Projector's version information"
     def version
