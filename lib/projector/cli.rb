@@ -44,7 +44,7 @@ module Projector
       say "Checking #{repos.size} repositories"
       repos.each do |repo|
         say "Looking at #{repo.path}"
-        if should_clone_repo?(options[:yes])
+        if should_clone_repo?(repo, options[:yes])
           say "Cloning #{repo.clone_url} to #{repo.clone_path(projector_working_dir)}"
           repo.clone(projector_working_dir) 
         end

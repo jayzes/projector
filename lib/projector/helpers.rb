@@ -32,7 +32,7 @@ module Projector
       File.directory?(File.join(repo.clone_path(projector_working_dir), '.git'))
     end
     
-    def should_clone_repo?(assume_yes)
+    def should_clone_repo?(repo, assume_yes = false)
       !repo_cloned?(repo) && (assume_yes || yes?("Repo #{repo.path} is not cloned yet.  Clone it? (y/n)"))
     end
     
