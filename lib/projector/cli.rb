@@ -32,19 +32,19 @@ module Projector
     end
     
     
-    desc "update", "Go through the Github repositories you can access and ensure that working copies for them are cloned into your working directory"
+    desc "checkout", "Go through the Github repositories you can access and ensure that working copies for them are cloned into your working directory"
     long_desc <<-DESC
       Projector loops through all of the repositories that you can access and clones working
       copies of them under your configured working directory if they don't already exist
     DESC
-    method_option :yes, :type => :boolean, :aliases => "-y"
-    def update
+    method_option :assume, :type => :boolean, :aliases => "-a"
+    def checkout
       invoke :check
       repos = all_repos
       say "Checking #{repos.size} repositories"
       repos.each do |repo|
         say "Looking at #{repo.path}"
-        if should_clone_repo?(repo, options[:yes])
+        if should_clone_repo?(repo, options[:assume])
           say "Cloning #{repo.clone_url} to #{repo.clone_path(projector_working_dir)}"
           repo.clone(projector_working_dir) 
         end

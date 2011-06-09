@@ -21,7 +21,7 @@ Configure your working directory.  I have a `Projects` directory under my home d
 
     git config --global projector.workingdir ~/Projects
 
-Run `projector update`.  Projector will find all of the repos you have access to and prompt you to clone them under your working directory if they're not already cloned.  By default, it will create a nested directory structure based on the repository owner, something like this:
+Run `projector checkout`.  Projector will find all of the repos you have access to and prompt you to clone them under your working directory if they're not already cloned.  By default, it will create a nested directory structure based on the repository owner, something like this:
 
     jayzes/
     jayzes/projector
@@ -29,7 +29,7 @@ Run `projector update`.  Projector will find all of the repos you have access to
     gvarela/
     gvarela/food_court_recipes
 
-If you want it to forge ahead and clone everything, there's a `-y` option that assumes yes to every clone confirmation and doesn't bother prompting.
+If you want it to forge ahead and clone everything, there's a `-a` option that assumes yes to every clone confirmation and doesn't bother prompting.
 
 ## Future Ideas
 * Skiplist/repo ignore regexes
